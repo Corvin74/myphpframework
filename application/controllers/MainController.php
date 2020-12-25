@@ -12,14 +12,13 @@
   
     /**
      */
-    public function __construct() {
-      
-    }
-    
-    /**
-     */
     public function indexAction() {
-      echo 'Главная страница сайта';
+//      $this->view->path = 'main/index1';
+      $vars = [
+        'name' => 'Вася',
+      ];
+      $this->view->render('Главная страница сайта', $vars);
+//       echo 'Главная страница сайта';
     }
   }
   

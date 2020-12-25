@@ -4,12 +4,19 @@
   use application\core\Controller;
     
   class AccountController extends Controller {
+    /**
+     * 
+     * 
+     */
+    public function before() {
+//       $this->view->layout = 'custom';
+    }
     
     public function loginAction() {
       $this->view->render('Страница входа');
     }
     
     public function registerAction() {
-      echo 'Страница регистрации';
+      $this->view->render('Страница регистрации');
     }
   }

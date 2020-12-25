@@ -1,6 +1,8 @@
 <?php
 namespace application\core;
 
+use application\core\View;
+
 /**
  * 
  * @author corvin
@@ -73,7 +75,8 @@ class Router {
         echo '<p><b style="color: red;">' . 'Класс: ' . $controllerPath . ' не найден!' . '</b></p>';
       }
     } else {
-      echo '<p><b style="color: red;">' . 'Error:404 - Маршрут не найден!' . '</b></p>';
+//       echo '<p><b style="color: red;">' . 'Error:404 - Маршрут не найден!' . '</b></p>';
+      View::errorCode('404');
     }
   }
   
