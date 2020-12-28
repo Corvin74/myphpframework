@@ -13,6 +13,7 @@
     }
     
     public function loginAction() {
+//       $this->view->redirect('/');
       $this->view->render('Страница входа');
     }
     

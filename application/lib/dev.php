@@ -5,7 +5,8 @@
   
   function debug($param, $stoped = FALSE) {
     echo'<pre>';
-      var_dump($param);
+    var_dump($param);
+    print_r($param);
     echo'</pre>';
     if ($stoped) {
       exit;
