@@ -25,18 +25,24 @@
       }
     }
     
-    public function query( $sql ) {
-      $query = $this->db->query($sql);
-      return $query;
+    public function query( $sql, $params = [] ) {
+      $preparedQuery = $this->db->prepare($sql);
+      if (!empty($params)) {
+          foreach ($params as $key => $value) {
+              $preparedQuery->bindValue(':' . $key, $value);
+          }
+      }
+      $preparedQuery->execute();
+      return $preparedQuery;
     }
     
-    public function getRow($sql) {
-      $result = $this->query($sql);
-      return $result->fetchAll(PDO::FETCH_ASSOC);
+    public function getRow( $sql, $params = [] ) {
+      $result = $this->query( $sql, $params );
+      return $result->fetch( PDO::FETCH_ASSOC );
     }
     
-    public function getColumn($sql) {
-      $result = $this->query($sql);
+    public function getColumn( $sql, $params = [] ) {
+      $result = $this->query( $sql, $params );
       return $result->fetchColumn();
     }
   }

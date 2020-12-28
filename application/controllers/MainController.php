@@ -19,7 +19,10 @@
         'name' => 'Вася',
       ];
       $db = new Db();
-      $result = $db->getRow('SELECT user_name FROM dic_users WHERE id = 3');
+      $params = [
+          'id' => 1,
+      ];
+      $result = $db->getRow('SELECT * FROM dic_users WHERE id = :id', $params);
       debug($result);
       $this->view->render('Главная страница сайта', $vars);
 //       echo 'Главная страница сайта';
