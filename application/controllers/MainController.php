@@ -2,7 +2,6 @@
   namespace application\controllers;
   
   use application\core\Controller;
-  use application\lib\Db;
     
   /**
    *
@@ -18,12 +17,12 @@
       $vars = [
         'name' => 'Вася',
       ];
-      $db = new Db();
-      $params = [
-          'id' => 1,
-      ];
-      $result = $db->getRow('SELECT * FROM dic_users WHERE id = :id', $params);
-      debug($result);
+//       $params = [
+//           'id' => 3,
+//       ];
+//       $result = $db->getRow('SELECT * FROM dic_users WHERE id = :id', $params);
+//       debug($result);
+      $this->model->getUsers();
       $this->view->render('Главная страница сайта', $vars);
 //       echo 'Главная страница сайта';
     }
