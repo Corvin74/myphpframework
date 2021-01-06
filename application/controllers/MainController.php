@@ -14,15 +14,17 @@
      */
     public function indexAction() {
 //      $this->view->path = 'main/index1';
-      $vars = [
-        'name' => 'Вася',
-      ];
 //       $params = [
 //           'id' => 3,
 //       ];
 //       $result = $db->getRow('SELECT * FROM dic_users WHERE id = :id', $params);
 //       debug($result);
-      $this->model->getUsers();
+//       $sqlQuery = "SELECT * FROM dic_users";
+//       debug($this->model->getUsers($sqlQuery));
+      $resultQuery = $this->model->getNews('SELECT * FROM news');
+      $vars = [
+        'news' => $resultQuery,
+      ];
       $this->view->render('Главная страница сайта', $vars);
 //       echo 'Главная страница сайта';
     }

@@ -27,7 +27,8 @@ abstract class Controller
   }
   
   public function loadModel($modelName) {
-    $pathToModel = str_replace('/', '\\', 'application/models/' . ucfirst($modelName));
+//     $pathToModel = str_replace('/', '\\', 'application/models/' . ucfirst($modelName));
+    $pathToModel = 'application\models\\' . ucfirst($modelName);
     if (class_exists($pathToModel)) {
       return new $pathToModel;
     }

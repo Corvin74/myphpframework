@@ -38,7 +38,7 @@
     
     public function getRow( $sql, $params = [] ) {
       $result = $this->query( $sql, $params );
-      return $result->fetch( PDO::FETCH_ASSOC );
+      return $result->fetchAll( PDO::FETCH_ASSOC );
     }
     
     public function getColumn( $sql, $params = [] ) {

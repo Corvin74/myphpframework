@@ -51,5 +51,13 @@
       exit();
     }
     
+    public function message($status, $message) {
+      exit( json_encode( [ 'status' => $status, 'message' => $message ] ) );
+    }
+    
+    public function redir($url) {
+      exit( json_encode( [ 'url' => $url ] ) );
+    }
+    
   }
   

@@ -13,7 +13,10 @@
     }
     
     public function loginAction() {
-//       $this->view->redirect('/');
+      if ( !empty( $_POST ) ) {
+//         $this->view->message('success', 'message');
+        $this->view->redir('/');
+      }
       $this->view->render('Страница входа');
     }
     
